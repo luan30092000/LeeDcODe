@@ -48,4 +48,33 @@ public class LeetCodeArray {
             return mergeArray[mergeArray.length - 1];
         }
     }
+
+    /**
+     * There are n vertical lines drawn such that the two endpoints
+     * of the ith line are (i, 0) and (i, height[i]).
+     *
+     * Find two lines that together with the x-axis form a container,
+     * such that the container contains the most water.
+     *
+     * @param height array height of length n
+     * @return the maximum amount of water a container can store.
+     */
+    public static int maxArea(int[] height) {
+        int start = 0;
+        int end = height.length - 1;
+        int volumn = 0;
+        while (start < end) {
+            int water = (end - start) * Math.min(height[start], height[end]);
+            if (water > volumn) {
+                volumn = water;
+            }
+
+            if (height[start] <= height[end]) {
+                start++;
+            } else {
+                end--;
+            }
+        }
+        return volumn;
+    }
 }
