@@ -77,4 +77,23 @@ public class LeetCodeArray {
         }
         return volumn;
     }
+
+    public static int removeDuplicates(int[] nums) {
+        if (nums.length == 0 || nums.length == 1) {
+            return nums.length;
+        }
+
+        int fixIndex = 1;
+        int compareValue = nums[0];
+        int runIndex = 1;
+        while(runIndex < nums.length) {
+            if (nums[runIndex] != compareValue) {
+                nums[fixIndex] = nums[runIndex];
+                compareValue = nums[runIndex];
+                runIndex++;
+            }
+            runIndex++;
+        }
+        return fixIndex;
+    }
 }
