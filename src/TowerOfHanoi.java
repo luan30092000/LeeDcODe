@@ -18,7 +18,6 @@ public class TowerOfHanoi {
     }
 
     public void moveDish(int[] from, int[] to) {
-        if (from.)
     }
 
     public void printGame() {
